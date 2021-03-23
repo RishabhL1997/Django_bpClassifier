@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Pressure Classification</title>
+</head>
+<body>
+
+<h1>Blood Pressure Classification</h1>
+<a href="{% url 'contact' %}">Go to contact page</a>
+<br>
+<br>
+<form action="{% url 'result' %}" >
+    {% csrf_token %}
+    <label>Systolic Pressure: </label>
+    <input type="text" name="systolic">
+    <br>
+    <br>
+    <label>Diastolic Pressure:</label>
+    <input type="text" name="diastolic">
+    <br>
+    <br>
+    <input type="submit" value="Submit data">
+
+</form>
+
+<br>
+
+<h2>All Records</h2>
+
+{% for record in all_items %}
+
+<p>{{record}}</p>
+{% endfor %}
+
+</body>
+</html>
